@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "./styles.css"
-import AddTask from '../AddTask';
-import ShowTasks from '../ShowTasks';
-import FilterTasks from '../FilterTasks';
+import AddTask from './AddTask';
+import ShowTasks from './ShowTasks';
+import FilterTasks from './FilterTasks';
 
 const ToDoList = () => {
   const [tasks, setTasks] = useState([]);
@@ -38,7 +38,7 @@ const ToDoList = () => {
   };
 
   const handleFilterTask = (searchTerm) => {
-    setFilteredTasks(filteredTasks.filter(task => task.title.toLowerCase().includes(searchTerm.toLowerCase())));
+    setFilteredTasks(tasks.filter(task => task.title.toLowerCase().includes(searchTerm.toLowerCase())));
   }
 
   return (
