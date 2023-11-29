@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { addTask } from "../../redux/reducers/Task/actionTypes";
+import { addTask } from "../../../redux/reducers/Task/actionTypes";
 
 const AddTask = () => {
     const [taskName, setTaskName] = useState('');

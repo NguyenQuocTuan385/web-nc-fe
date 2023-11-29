@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { markTask } from "../../redux/reducers/Task/actionTypes";
+import { markTask } from "../../../redux/reducers/Task/actionTypes";
 import "./styles.css";
 
 const ShowTask = () => {

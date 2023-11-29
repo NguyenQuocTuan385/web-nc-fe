@@ -1,7 +1,7 @@
 import "./styles.css"
-import AddTasks from '../AddTask';
-import ShowTasks from '../ShowTasks';
-import FilterTasks from '../FilterTasks';
+import AddTasks from './AddTask';
+import ShowTasks from './ShowTasks';
+import FilterTasks from './FilterTasks';
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setTasks } from "../../redux/reducers/Task/actionTypes";

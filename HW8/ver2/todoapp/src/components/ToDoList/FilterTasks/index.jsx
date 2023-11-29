@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { filterTask } from "../../redux/reducers/Task/actionTypes";
+import { filterTask } from "../../../redux/reducers/Task/actionTypes";
 import "./styles.css";
 
 export default function FilterTask() {
