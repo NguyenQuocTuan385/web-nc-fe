@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/todolist
+    username: root
+    password:
+jwt:
+  expiration: 2592000
+  secretKey: VzzO3+vn3QqsXwTkp982RniBlw+t6PwgIKMX+OMW+78=
+api:
+  prefix: api
+fe:
+  url: http://localhost:3000

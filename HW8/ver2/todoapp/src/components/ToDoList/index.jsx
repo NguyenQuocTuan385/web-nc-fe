@@ -7,12 +7,12 @@ import { useDispatch } from "react-redux";
 import { setTasks } from "../../redux/reducers/Task/actionTypes";
 
 const ToDoList = () => {
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (localStorage.getItem("tasks")) {
       const listTasks = JSON.parse(localStorage.getItem("tasks"))
-      dispath(setTasks(listTasks));
+      dispatch(setTasks(listTasks));
     }
   }, [])
 

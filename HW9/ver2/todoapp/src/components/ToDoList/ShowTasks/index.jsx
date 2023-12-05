@@ -1,15 +1,25 @@
 import { useDispatch, useSelector } from "react-redux";
-import { markTask } from "../../../redux/reducers/Task/actionTypes";
+import { markTask } from "../../../redux/reducers/ToDoList/actionTypes";
 import "./styles.css";
+import { ToDoListService } from "../../../services/todolist"
+import { setLoading } from "../../../redux/reducers/Status/actionTypes";
 
 const ShowTask = () => {
     const dispatch = useDispatch();
-    const state = useSelector((state) => state.tasks)
-    const tasksShow = state.filteredTasks.length > 0 ? state.filteredTasks : state.tasks;
-    const onClickCheckbox = (id) => {
-        const newTasks = state.tasks.map(task => task.id === id ? { ...task, completed: !task.completed } : task);
-        localStorage.setItem("tasks", JSON.stringify(newTasks));
-        dispatch(markTask(id))
+    const todolist = useSelector((state) => state.todolist)
+    const tasksShow = todolist.filteredTasks.length > 0 ? todolist.filteredTasks : todolist.tasks;
+    const onClickCheckbox = (task) => {
+        dispatch(setLoading(true));
+        ToDoListService.updateTask(task.id, { ...task, completed: !task.completed })
+            .then(() => {
+                dispatch(markTask(task.id))
+            })
+            .catch((e) => {
+                console.log(e)
+            })
+            .finally(() => {
+                dispatch(setLoading(false));
+            })
     }
 
     return (
@@ -30,7 +40,7 @@ const ShowTask = () => {
 
                         <input type="checkbox" 
                         checked={ task.completed } 
-                        onClick={ () => onClickCheckbox(task.id) } />
+                        onChange={ () => onClickCheckbox(task) } />
                     </div>
                 ))}
             </div>

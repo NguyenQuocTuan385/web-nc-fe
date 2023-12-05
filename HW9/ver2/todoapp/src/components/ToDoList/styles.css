@@ -1,0 +1,19 @@
+.handleTask{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasks-container {
+  background: #fff;
+  width: 800px;
+  padding: 65px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+  gap: 15px;
+}
