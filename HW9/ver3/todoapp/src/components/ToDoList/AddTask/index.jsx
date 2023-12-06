@@ -13,14 +13,11 @@ const AddTask = () => {
             taskName: "",
         }
       });
-    const todolist = useSelector(state => state.todolist);
+
     const dispatch = useDispatch();
 
     const onSubmit = (data) => {
-        const length = todolist.tasks.length;
-        
         const newTask = {
-            id: length + 1,
             title: data.taskName,
             completed: false
         };
