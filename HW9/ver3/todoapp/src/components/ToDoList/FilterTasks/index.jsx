@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { filterTask } from "../../../redux/reducers/ToDoList/actionTypes";
 import "./styles.css";
 
-const FilterTask = () => {
+export default function FilterTask() {
   const dispatch = useDispatch();
   const [ searchTerm, setSearchTerm ] = useState('');
   const handleSearchChange = (event) => {
@@ -23,5 +23,3 @@ const FilterTask = () => {
     </div>
   )
 }
-
-export default FilterTask;

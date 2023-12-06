@@ -20,13 +20,11 @@ const AddTask = () => {
             alert("Vui lòng nhập ít nhất một ký tự!!");
             return;
         }
-
         const newTask={
             id: length+1,
             title: taskName,
             completed: false
         };
-
         dispatch(addTask(newTask));
         localStorage.setItem("tasks", JSON.stringify([...state.tasks, newTask]));
         setTaskName(''); 

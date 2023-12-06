@@ -37,7 +37,7 @@ const LoginForm = ({  }) => {
               required: "Username is required" ,
               minLength: {
                 value: 4,
-                message: "Min length is 4"
+                message: "Min length is 2"
               }
             })}
           />
@@ -47,7 +47,13 @@ const LoginForm = ({  }) => {
           <input
             type="password"
             placeholder="Mật khẩu"
-            {...register("password", { required: "Password is required" })}
+            {...register("password", {
+              required: "Password is required" ,
+              minLength: {
+                value: 4,
+                message: "Min length is 2"
+              }
+            })}
           />
           <p className='error'>{errors.password?.message}</p>
         </div>
